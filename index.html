@@ -1,0 +1,528 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>CRM 3.1 – Full Flashcard Deck</title>
+<style>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+  padding: 16px;
+  color: #111827;
+}
+.header {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  padding: 14px 16px;
+  margin-bottom: 14px;
+}
+.header h1 {
+  font-size: 18px;
+  margin: 0 0 6px 0;
+  line-height: 1.2;
+}
+.header .sub {
+  font-size: 13px;
+  color: #4b5563;
+  line-height: 1.35;
+}
+.toolbar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.toolbar button {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  font-size: 13px;
+}
+.card {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  margin-bottom: 14px;
+  padding: 14px 16px;
+}
+.title {
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.section {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #eef2f7;
+}
+.label {
+  font-weight: 700;
+  color: #1f2937;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+.content {
+  font-size: 14px;
+  line-height: 1.45;
+}
+.btnrow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.btn {
+  padding: 9px 12px;
+  border-radius: 10px;
+  border: none;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+}
+.btn.secondary {
+  background: #0f766e;
+}
+.btn.ghost {
+  background: #111827;
+}
+.panel {
+  display: none;
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 12px;
+  background: #eef2ff;
+  border: 1px solid #e0e7ff;
+}
+.panel.hint {
+  background: #ecfeff;
+  border-color: #cffafe;
+}
+.panel.answer {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+.tip {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 12px;
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  font-size: 13px;
+}
+.small {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 6px;
+  line-height: 1.35;
+}
+</style>
+<script>
+function toggle(id) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  el.style.display = (el.style.display === "none" || el.style.display === "") ? "block" : "none";
+}
+function showAll(kind) {
+  var els = document.querySelectorAll(".panel." + kind);
+  els.forEach(function(el){ el.style.display = "block"; });
+}
+function hideAll() {
+  var els = document.querySelectorAll(".panel");
+  els.forEach(function(el){ el.style.display = "none"; });
+}
+function scrollToTop() { window.scrollTo({top:0, behavior:"smooth"}); }
+</script>
+</head><body>
+
+<div class="header">
+  <h1>CRM 3.1 – Systems of Linear Equations (Full Flashcard Deck)</h1>
+  <div class="sub">
+    Use this like a mini-lesson deck: <b>Try it first</b> → open a Hint if needed → then check the Answer.
+    Works on iPhone Safari/Edge without “mirrored text” issues.
+  </div>
+  <div class="toolbar">
+    <button onclick="showAll('hint')">Show all hints</button>
+    <button onclick="showAll('answer')">Show all answers</button>
+    <button onclick="hideAll()">Hide all panels</button>
+    <button onclick="scrollToTop()">Back to top</button>
+  </div>
+  <div class="small">Tip for self-practice: do 6–8 cards per day. Re-do missed ones the next day.</div>
+</div>
+
+<div class='card'>
+<div class='title'>Card 1: What is a system?</div>
+<div class='section'>
+<div class='label'>Question</div>
+<div class='content'>In your own words, what is a <b>system of linear equations</b>?</div>
+</div>
+<div class='section'>
+<div class='label'>Try this first</div>
+<div class='content'>Say what you’re trying to find (a point) and what must be true (both equations).</div>
+</div>
+<div class='btnrow'>
+<button class='btn secondary' onclick="toggle('h1')">Show Hint</button>
+<button class='btn' onclick="toggle('a1')">Show Answer</button>
+</div>
+<div class='panel hint' id='h1'>Think: two lines on the same coordinate plane.</div>
+<div class='panel answer' id='a1'>A system of linear equations is <b>two (or more) linear equations</b> that share the same variables. The <b>solution</b> is the ordered pair that makes <b>all equations true</b> (the intersection point on a graph).</div>
+</div>
+<div class='card'>
+<div class='title'>Card 2: What is a solution?</div>
+<div class='section'>
+<div class='label'>Question</div>
+<div class='content'>What does the <b>solution</b> to a system represent on a graph?</div>
+</div>
+<div class='section'>
+<div class='label'>Try this first</div>
+<div class='content'>Picture two lines. Where do you look for the answer?</div>
+</div>
+<div class='btnrow'>
+<button class='btn secondary' onclick="toggle('h2')">Show Hint</button>
+<button class='btn' onclick="toggle('a2')">Show Answer</button>
+</div>
+<div class='panel hint' id='h2'>It’s the point both lines share.</div>
+<div class='panel answer' id='a2'>The solution is the <b>intersection point</b>—the ordered pair that lies on <b>both</b> lines.</div>
+</div>
+<div class='card'>
+<div class='title'>Card 3: Check a point (both equations)</div>
+<div class='section'>
+<div class='label'>System + Check</div>
+<div class='content'>System:<br>y = x − 3<br>y = −1<br><br>Is (2, −1) a solution?</div>
+</div>
+<div class='section'>
+<div class='label'>Try this first</div>
+<div class='content'>Substitute x=2 into equation 1. Then check equation 2.</div>
+</div>
+<div class='btnrow'>
+<button class='btn secondary' onclick="toggle('h3')">Show Hint</button>
+<button class='btn' onclick="toggle('a3')">Show Answer</button>
+</div>
+<div class='panel hint' id='h3'>Does y become −1 in equation 1?</div>
+<div class='panel answer' id='a3'>Equation 1: y = 2 − 3 = −1 ✓<br>Equation 2: y = −1 ✓<br><br>✅ Yes, (2, −1) makes <b>both</b> equations true.</div>
+</div>
+<div class='card'>
+<div class='title'>Card 4: Check a point (only one works)</div>
+<div class='section'>
+<div class='label'>System + Check</div>
+<div class='content'>System:<br>y = 2x − 2<br>y = x + 1<br><br>Does (3, 4) make both equations true?</div>
+</div>
+<div class='section'>
+<div class='label'>Try this first</div>
+<div class='content'>Plug (3,4) into each equation separately.</div>
+</div>
+<div class='btnrow'>
+<button class='btn secondary' onclick="toggle('h4')">Show Hint</button>
+<button class='btn' onclick="toggle('a4')">Show Answer</button>
+</div>
+<div class='panel hint' id='h4'>Compute 2(3)−2 and 3+1.</div>
+<div class='panel answer' id='a4'>Eqn 1: y = 2(3) − 2 = 4 ✓<br>Eqn 2: y = 3 + 1 = 4 ✓<br><br>✅ Yes, (3,4) makes both equations true (it <b>is</b> a solution).</div>
+</div>
+<div class='card'>
+<div class='title'>Card 5: Check a point (neither works)</div>
+<div class='section'>
+<div class='label'>System + Check</div>
+<div class='content'>System:<br>y = −x + 1<br>y = 2x + 10<br><br>Is (3, −4) a solution?</div>
+</div>
+<div class='section'>
+<div class='label'>Try this first</div>
+<div class='content'>Substitute x=3 and compare with y=−4.</div>
+</div>
+<div class='btnrow'>
+<button class='btn secondary' onclick="toggle('h5')">Show Hint</button>
+<button class='btn' onclick="toggle('a5')">Show Answer</button>
+</div>
+<div class='panel hint' id='h5'>Eqn 1 gives y = −3 + 1 = −2.</div>
+<div class='panel answer' id='a5'>Eqn 1: y = −3 + 1 = −2 (not −4) ✗<br>Eqn 2: y = 2(3)+10 = 16 (not −4) ✗<br><br>❌ No. It makes <b>neither</b> equation true.</div>
+</div>
+<div class='card'>
+<div class='title'>Card 6: Solution types (one / none / infinite)</div>
+<div class='section'>
+<div class='label'>Question</div>
+<div class='content'>A system can have <b>one solution</b>, <b>no solution</b>, or <b>infinitely many solutions</b>. Match each to the graph idea.</div>
+</div>
+<div class='section'>
+<div class='label'>Try this first</div>
+<div class='content'>Say what the lines do in each case.</div>
+</div>
+<div class='btnrow'>
+<button class='btn secondary' onclick="toggle('h6')">Show Hint</button>
+<button class='btn' onclick="toggle('a6')">Show Answer</button>
+</div>
+<div class='panel hint' id='h6'>Intersect once / never meet / same line.</div>
+<div class='panel answer' id='a6'><b>One solution</b>: lines intersect at 1 point.<br><b>No solution</b>: lines are parallel (same slope, different intercepts).<br><b>Infinitely many</b>: equations are the same line (same slope and same intercept).</div>
+</div>
+<div class='card'>
+<div class='title'>Card 7: Decide the number of solutions (parallel)</div>
+<div class='section'>
+<div class='label'>System</div>
+<div class='content'>System:<br>y = 2x + 3<br>y = 2x − 1<br><br>How many solutions?</div>
+</div>
+<div class='section'>
+<div class='label'>Try this first</div>
+<div class='content'>Compare slopes and y-intercepts.</div>
+</div>
+<div class='btnrow'>
+<button class='btn secondary' onclick="toggle('h7')">Show Hint</button>
+<button class='btn' onclick="toggle('a7')">Show Answer</button>
+</div>
+<div class='panel hint' id='h7'>Same slope, different intercepts.</div>
+<div class='panel answer' id='a7'>Both have slope 2 but different y-intercepts (3 and −1) → <b>parallel</b> lines → ❌ <b>No solution</b>.</div>
+</div>
+<div class='card'>
+<div class='title'>Card 8: Decide the number of solutions (same line)</div>
+<div class='section'>
+<div class='label'>System</div>
+<div class='content'>System:<br>y = −3x + 4<br>y = −3x + 4<br><br>How many solutions?</div>
+</div>
+<div class='section'>
+<div class='label'>Try this first</div>
+<div class='content'>Are they identical?</div>
+</div>
+<div class='btnrow'>
+<button class='btn secondary' onclick="toggle('h8')">Show Hint</button>
+<button class='btn' onclick="toggle('a8')">Show Answer</button>
+</div>
+<div class='panel hint' id='h8'>Every point on one is on the other.</div>
+<div class='panel answer' id='a8'>They are the <b>same equation</b> → the same line → ♾ <b>infinitely many solutions</b>.</div>
+</div>
+<div class='card'>
+<div class='title'>Card 9: Graph meaning (intersection point)</div>
+<div class='section'>
+<div class='label'>Graph Fact</div>
+<div class='content'>Two lines intersect at (−1, 2). What is the solution to the system?</div>
+</div>
+<div class='section'>
+<div class='label'>Try this first</div>
+<div class='content'>The solution is the shared point.</div>
+</div>
+<div class='btnrow'>
+<button class='btn secondary' onclick="toggle('h9')">Show Hint</button>
+<button class='btn' onclick="toggle('a9')">Show Answer</button>
+</div>
+<div class='panel hint' id='h9'>Just restate the intersection.</div>
+<div class='panel answer' id='a9'>✅ The solution is <b>(−1, 2)</b>.</div>
+</div>
+<div class='card'>
+<div class='title'>Card 10: Complete the statement (is / is not)</div>
+<div class='section'>
+<div class='label'>Statement</div>
+<div class='content'>Complete: The point (0, 4) is ____ the solution to the system if it lies on <b>both</b> lines.</div>
+</div>
+<div class='section'>
+<div class='label'>Try this first</div>
+<div class='content'>What word makes the sentence true?</div>
+</div>
+<div class='btnrow'>
+<button class='btn secondary' onclick="toggle('h10')">Show Hint</button>
+<button class='btn' onclick="toggle('a10')">Show Answer</button>
+</div>
+<div class='panel hint' id='h10'>If it lies on both lines, it works for both equations.</div>
+<div class='panel answer' id='a10'>The point (0, 4) <b>is</b> the solution (because it makes both equations true).</div>
+</div>
+<div class='card'>
+<div class='title'>Card 11: Graphing technique (y = mx + b)</div>
+<div class='section'>
+<div class='label'>How-To</div>
+<div class='content'>How do you graph y = mx + b quickly?</div>
+</div>
+<div class='section'>
+<div class='label'>Try this first</div>
+<div class='content'>Name the two pieces: intercept and slope.</div>
+</div>
+<div class='btnrow'>
+<button class='btn secondary' onclick="toggle('h11')">Show Hint</button>
+<button class='btn' onclick="toggle('a11')">Show Answer</button>
+</div>
+<div class='panel hint' id='h11'>Plot b first, then use m as rise/run.</div>
+<div class='panel answer' id='a11'>1) Plot the y-intercept <b>b</b> at (0, b).<br>2) Use slope <b>m</b> (rise/run) to find a second point.<br>3) Draw the line with a ruler.</div>
+</div>
+<div class='card'>
+<div class='title'>Card 12: Solve by graphing (easy integers)</div>
+<div class='section'>
+<div class='label'>System</div>
+<div class='content'>Solve the system (graphing or thinking):<br>y = x + 1<br>y = −x + 5</div>
+</div>
+<div class='section'>
+<div class='label'>Try this first</div>
+<div class='content'>Set them equal: x+1 = −x+5.</div>
+</div>
+<div class='btnrow'>
+<button class='btn secondary' onclick="toggle('h12')">Show Hint</button>
+<button class='btn' onclick="toggle('a12')">Show Answer</button>
+</div>
+<div class='panel hint' id='h12'>2x = 4.</div>
+<div class='panel answer' id='a12'>x + 1 = −x + 5 → 2x = 4 → x = 2 → y = 3.<br>✅ Solution: <b>(2, 3)</b>.</div>
+</div>
+<div class='card'>
+<div class='title'>Card 13: Solve by graphing (another)</div>
+<div class='section'>
+<div class='label'>System</div>
+<div class='content'>Solve the system:<br>y = 2x − 1<br>y = −x + 5</div>
+</div>
+<div class='section'>
+<div class='label'>Try this first</div>
+<div class='content'>Set them equal: 2x−1 = −x+5.</div>
+</div>
+<div class='btnrow'>
+<button class='btn secondary' onclick="toggle('h13')">Show Hint</button>
+<button class='btn' onclick="toggle('a13')">Show Answer</button>
+</div>
+<div class='panel hint' id='h13'>3x = 6.</div>
+<div class='panel answer' id='a13'>2x − 1 = −x + 5 → 3x = 6 → x = 2 → y = 3.<br>✅ Solution: <b>(2, 3)</b>.</div>
+</div>
+<div class='card'>
+<div class='title'>Card 14: FAST-style multiple choice (solution point)</div>
+<div class='section'>
+<div class='label'>Multiple Choice</div>
+<div class='content'>System:<br>y = x + 2<br>y = −2x + 1<br><br>Which point is the solution?<br>A. (0,2) &nbsp; B. (1,3) &nbsp; C. (−1,1) &nbsp; D. (1,−1)</div>
+</div>
+<div class='section'>
+<div class='label'>Try this first</div>
+<div class='content'>Try plugging each point into BOTH equations until one works.</div>
+</div>
+<div class='btnrow'>
+<button class='btn secondary' onclick="toggle('h14')">Show Hint</button>
+<button class='btn' onclick="toggle('a14')">Show Answer</button>
+</div>
+<div class='panel hint' id='h14'>Check C first—it often works nicely.</div>
+<div class='panel answer' id='a14'>Check C (−1,1):<br>Eqn1: y = −1+2=1 ✓<br>Eqn2: y = −2(−1)+1=3 (not 1) ✗<br><br>Try A (0,2): Eqn1 gives 2 ✓, Eqn2 gives 1 ✗<br>Try B (1,3): Eqn1 gives 3 ✓, Eqn2 gives −1 ✗<br>Try D (1,−1): Eqn1 gives 3 ✗<br><br><b>None of these</b> are solutions as written. (This is a “trap-check” card.) On a real test, one option should work—so you’d re-check copying the equations.</div>
+</div>
+<div class='card'>
+<div class='title'>Card 15: The ‘trap-check’ skill</div>
+<div class='section'>
+<div class='label'>Test Skill</div>
+<div class='content'>If none of the answer choices work, what should you do before panicking?</div>
+</div>
+<div class='section'>
+<div class='label'>Try this first</div>
+<div class='content'>Think: copying errors and sign mistakes.</div>
+</div>
+<div class='btnrow'>
+<button class='btn secondary' onclick="toggle('h15')">Show Hint</button>
+<button class='btn' onclick="toggle('a15')">Show Answer</button>
+</div>
+<div class='panel hint' id='h15'>Re-check negatives and substitution.</div>
+<div class='panel answer' id='a15'>1) Re-read the equations (signs!).<br>2) Re-plug the point carefully.<br>3) Make sure you didn’t swap x and y.<br>4) If graph is given, trust the intersection point.</div>
+</div>
+<div class='card'>
+<div class='title'>Card 16: Identify solution type from slopes</div>
+<div class='section'>
+<div class='label'>Quick Decide</div>
+<div class='content'>Without graphing: If two lines have <b>different slopes</b>, the system has…?</div>
+</div>
+<div class='section'>
+<div class='label'>Try this first</div>
+<div class='content'>What must happen if slopes differ?</div>
+</div>
+<div class='btnrow'>
+<button class='btn secondary' onclick="toggle('h16')">Show Hint</button>
+<button class='btn' onclick="toggle('a16')">Show Answer</button>
+</div>
+<div class='panel hint' id='h16'>They cross exactly once.</div>
+<div class='panel answer' id='a16'>✅ <b>One solution</b> (the lines intersect exactly once).</div>
+</div>
+<div class='card'>
+<div class='title'>Card 17: Identify solution type from slopes/intercepts</div>
+<div class='section'>
+<div class='label'>Quick Decide</div>
+<div class='content'>Without graphing: If two lines have the <b>same slope</b> but <b>different y-intercepts</b>, the system has…?</div>
+</div>
+<div class='section'>
+<div class='label'>Try this first</div>
+<div class='content'>Same steepness, different starting heights.</div>
+</div>
+<div class='btnrow'>
+<button class='btn secondary' onclick="toggle('h17')">Show Hint</button>
+<button class='btn' onclick="toggle('a17')">Show Answer</button>
+</div>
+<div class='panel hint' id='h17'>Parallel.</div>
+<div class='panel answer' id='a17'>❌ <b>No solution</b> (parallel lines).</div>
+</div>
+<div class='card'>
+<div class='title'>Card 18: Identify infinite solutions quickly</div>
+<div class='section'>
+<div class='label'>Quick Decide</div>
+<div class='content'>Without graphing: If two equations are exactly the same (or simplify to the same), the system has…?</div>
+</div>
+<div class='section'>
+<div class='label'>Try this first</div>
+<div class='content'>Every point works.</div>
+</div>
+<div class='btnrow'>
+<button class='btn secondary' onclick="toggle('h18')">Show Hint</button>
+<button class='btn' onclick="toggle('a18')">Show Answer</button>
+</div>
+<div class='panel hint' id='h18'>Same line.</div>
+<div class='panel answer' id='a18'>♾ <b>Infinitely many solutions</b>.</div>
+</div>
+<div class='card'>
+<div class='title'>Card 19: Checkbox table (like CRM)</div>
+<div class='section'>
+<div class='label'>Select Solution / Not a Solution</div>
+<div class='content'>System:<br>y = x − 1<br>y = −x + 5<br><br>Decide if each is a solution:<br>(2,1) &nbsp;&nbsp; (3,2) &nbsp;&nbsp; (1,4)</div>
+</div>
+<div class='section'>
+<div class='label'>Try this first</div>
+<div class='content'>Plug into Eqn 1, then Eqn 2 for each point.</div>
+</div>
+<div class='btnrow'>
+<button class='btn secondary' onclick="toggle('h19')">Show Hint</button>
+<button class='btn' onclick="toggle('a19')">Show Answer</button>
+</div>
+<div class='panel hint' id='h19'>For (2,1), Eqn1 gives 1 and Eqn2 gives 3.</div>
+<div class='panel answer' id='a19'>(2,1): Eqn1 ✓, Eqn2 ✗ → <b>Not</b><br>(3,2): Eqn1 ✓, Eqn2 ✓ → <b>Solution</b><br>(1,4): Eqn1 ✗, Eqn2 ✓ → <b>Not</b><br><br>✅ Only <b>(3,2)</b> is a solution.</div>
+</div>
+<div class='card'>
+<div class='title'>Card 20: Two-part (graph + solution blanks)</div>
+<div class='section'>
+<div class='label'>Two-Part</div>
+<div class='content'>Part A: Graph the system:<br>y = x − 2<br>y = −x + 4<br><br>Part B: The solution is (___, ___).</div>
+</div>
+<div class='section'>
+<div class='label'>Try this first</div>
+<div class='content'>Set them equal: x−2 = −x+4.</div>
+</div>
+<div class='btnrow'>
+<button class='btn secondary' onclick="toggle('h20')">Show Hint</button>
+<button class='btn' onclick="toggle('a20')">Show Answer</button>
+</div>
+<div class='panel hint' id='h20'>2x = 6.</div>
+<div class='panel answer' id='a20'>x − 2 = −x + 4 → 2x = 6 → x = 3 → y = 1.<br>✅ Solution: <b>(3, 1)</b>.</div>
+</div>
+<div class='card'>
+<div class='title'>Card 21: Graphing with a given line already drawn</div>
+<div class='section'>
+<div class='label'>Test Scenario</div>
+<div class='content'>One line is already graphed: y = −2x + 3.<br>You must graph y = x − 1.<br><br>What should you do first?</div>
+</div>
+<div class='section'>
+<div class='label'>Try this first</div>
+<div class='content'>Start with y-intercept.</div>
+</div>
+<div class='btnrow'>
+<button class='btn secondary' onclick="toggle('h21')">Show Hint</button>
+<button class='btn' onclick="toggle('a21')">Show Answer</button>
+</div>
+<div class='panel hint' id='h21'>Plot (0, −1) then slope 1.</div>
+<div class='panel answer' id='a21'>For y = x − 1: plot y-intercept at <b>(0, −1)</b>, then use slope 1 (rise 1, run 1) to draw the line. Then find the intersection with the other line.</div>
+</div>
+<div class='card'>
+<div class='title'>Card 22: Decide the correct statement about the system</div>
+<div class='section'>
+<div class='label'>Multiple Choice</div>
+<div class='content'>Lines: y = 3 − 1.5x and y = x + 3.<br>Which statement is true?<br>☐ Same slope → no solutions<br>☐ Same slope → infinitely many solutions<br>☐ Different slopes → one solution<br>☐ Different slopes → no solutions</div>
+</div>
+<div class='section'>
+<div class='label'>Try this first</div>
+<div class='content'>Find slopes: first is −1.5, second is 1.</div>
+</div>
+<div class='btnrow'>
+<button class='btn secondary' onclick="toggle('h22')">Show Hint</button>
+<button class='btn' onclick="toggle('a22')">Show Answer</button>
+</div>
+<div class='panel hint' id='h22'>Different slopes intersect once.</div>
+<div class='panel answer' id='a22'>Slopes are −1.5 and 1 → different → ✅ <b>one solution</b>.<br>Correct choice: <b>Different slopes → one solution</b>.</div>
+</div>
+</body></html>
